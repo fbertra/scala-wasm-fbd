@@ -7,7 +7,7 @@ embed:
 opt: embed
 	wasm-opt main.wasm --enable-tail-call --enable-multivalue --enable-gc --enable-reference-types --enable-exception-handling --enable-bulk-memory --enable-nontrapping-float-to-int --closed-world --inline-functions-with-loops --traps-never-happen --fast-math --type-ssa -O3 -O3 --gufa -O3 --type-merging -O3 -Oz -o main.wasm
 
-component: opt
+component: embed
 	wasm-tools component new main.wasm -o main.wasm
 
 run:
