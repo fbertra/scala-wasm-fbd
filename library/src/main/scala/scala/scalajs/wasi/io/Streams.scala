@@ -55,6 +55,14 @@ object Streams {
     @ComponentResourceMethod("blocking-write-and-flush")
     def blockingWriteAndFlush(contents: Array[UByte]): cm.Result[Unit, StreamError]
 
+    /*
+        write: func(
+            contents: list<u8>
+        ) -> result<_, stream-error>;    
+    */
+    @ComponentResourceMethod("write")
+    def write(contents: Array[UByte]): cm.Result[Unit, StreamError] = cm.native
+
     @ComponentResourceDrop
     def close(): Unit = cm.native
   }
